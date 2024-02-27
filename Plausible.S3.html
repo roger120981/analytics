@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>PlausibleWeb.Live.Shields.Tabs — Plausible v0.0.1</title>
+    <title>Plausible.S3 — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-4B488B2F.js"></script>
+    <script src="dist/sidebar_items-679F5E33.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,21 +131,19 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/live/shields/tabs.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/s3.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">PlausibleWeb.Live.Shields.Tabs</span> 
+  <span translate="no">Plausible.S3</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Currently only a placeholder module. Once more shields
-are implemented it will display tabs with counters,
-linking to their respective live views.</p>
+<p>Helper functions for S3 exports/imports.</p>
   </section>
 
 
@@ -163,31 +161,11 @@ linking to their respective live views.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#handle_info/2" translate="no">handle_info(arg, socket)</a>
+        <a href="#import_clickhouse_credentials/0" translate="no">import_clickhouse_credentials()</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveView.html#c:handle_info/2"><code class="inline">Phoenix.LiveView.handle_info/2</code></a>.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#mount/3" translate="no">mount(params, map, socket)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveView.html#c:mount/3"><code class="inline">Phoenix.LiveView.mount/3</code></a>.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#render/1" translate="no">render(assigns)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveView.html#c:render/1"><code class="inline">Phoenix.LiveView.render/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Returns <code class="inline">access_key_id</code> and <code class="inline">secret_access_key</code> to be used by ClickHouse during imports from S3.</p></div>
 
     </div>
 
@@ -204,16 +182,16 @@ linking to their respective live views.</p>
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="handle_info/2">
+<section class="detail" id="import_clickhouse_credentials/0">
 
   <div class="detail-header">
-    <a href="#handle_info/2" class="detail-link" title="Link to this function">
+    <a href="#import_clickhouse_credentials/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">handle_info(arg, socket)</h1>
+    <h1 class="signature" translate="no">import_clickhouse_credentials()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/live/shields/tabs.ex#L7" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/s3.ex#L11" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -223,51 +201,16 @@ linking to their respective live views.</p>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveView.html#c:handle_info/2"><code class="inline">Phoenix.LiveView.handle_info/2</code></a>.</p>
-  </section>
-</section>
-<section class="detail" id="mount/3">
+      <div class="specs">
 
-  <div class="detail-header">
-    <a href="#mount/3" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">mount(params, map, socket)</h1>
+          <pre translate="no"><span class="attribute">@spec</span> import_clickhouse_credentials() :: %{
+  access_key_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  secret_access_key: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()
+}</pre>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/live/shields/tabs.ex#L13" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
+      </div>
 
-
-  </div>
-
-  <section class="docstring">
-
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveView.html#c:mount/3"><code class="inline">Phoenix.LiveView.mount/3</code></a>.</p>
-  </section>
-</section>
-<section class="detail" id="render/1">
-
-  <div class="detail-header">
-    <a href="#render/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">render(assigns)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/live/shields/tabs.ex#L39" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveView.html#c:render/1"><code class="inline">Phoenix.LiveView.render/1</code></a>.</p>
+<p>Returns <code class="inline">access_key_id</code> and <code class="inline">secret_access_key</code> to be used by ClickHouse during imports from S3.</p>
   </section>
 </section>
 
