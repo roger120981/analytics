@@ -66,6 +66,7 @@ Plausible.DataCase.html
 Plausible.DataMigration.NumericIDs.html
 Plausible.DataMigration.PopulateEventSessionColumns.html
 Plausible.DataMigration.Repo.html
+Plausible.DataMigration.SiteImports.html
 Plausible.DataMigration.VersionedSessions.html
 Plausible.DataMigration.html
 Plausible.DebugReplayInfo.html
@@ -131,6 +132,7 @@ Plausible.Purge.html
 Plausible.RateLimit.html
 Plausible.Release.html
 Plausible.Repo.html
+Plausible.RequestLogger.html
 Plausible.S3.html
 Plausible.Sentry.Client.html
 Plausible.SentryFilter.html
@@ -184,6 +186,7 @@ Plausible.Stats.Metrics.html
 Plausible.Stats.Props.html
 Plausible.Stats.Query.html
 Plausible.Stats.Sampling.html
+Plausible.Stats.TableDecider.html
 Plausible.Stats.Timeseries.html
 Plausible.Stats.Util.html
 Plausible.Stats.html
@@ -196,6 +199,7 @@ Plausible.Users.html
 Plausible.Workers.AcceptTrafficUntil.html
 Plausible.Workers.CheckUsage.html
 Plausible.Workers.CleanInvitations.html
+Plausible.Workers.ClickhouseCleanSites.html
 Plausible.Workers.ExpireDomainChangeTransitions.html
 Plausible.Workers.ExportCSV.html
 Plausible.Workers.ImportAnalytics.html
@@ -379,8 +383,8 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-07CED9E2.js
-dist/sidebar_items-66F3792A.js
+dist/search_data-79FF4C4A.js
+dist/sidebar_items-9A4530EB.js
 index.html
 readme.html
 search.html
