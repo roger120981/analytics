@@ -14,7 +14,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-9A4530EB.js"></script>
+    <script src="dist/sidebar_items-7B88CF06.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -150,15 +150,6 @@ Pages
 </h2>
 
     <div class="summary">
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="CompiledRegex.html" translate="no">CompiledRegex</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>Ensures that the regex is compiled on load</p></div>
-
-</div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="ObanErrorReporter.html" translate="no">ObanErrorReporter</a>
@@ -726,6 +717,15 @@ priv/data_migrations/VersionedSessions/sql</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Ecto.Types.CompiledRegex.html" translate="no">Plausible.Ecto.Types.CompiledRegex</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Ensures that the regex is compiled on load</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Exports.html" translate="no">Plausible.Exports</a>
 
   </div>
@@ -958,7 +958,8 @@ maximum size, defined by <code class="inline">max_buffer_size/0</code>.</p></div
 
   </div>
 
-    <div class="summary-synopsis"><p>CSV importer from S3 that uses ClickHouse <a href="https://clickhouse.com/docs/en/sql-reference/table-functions/s3">s3 table function.</a></p></div>
+    <div class="summary-synopsis"><p>CSV importer from either S3 for which it uses ClickHouse <a href="https://clickhouse.com/docs/en/sql-reference/table-functions/s3">s3 table function</a>
+or from local storage for which it uses <a href="https://clickhouse.com/docs/en/sql-reference/table-functions/input">input function.</a></p></div>
 
 </div>
 <div class="summary-row">
@@ -1344,6 +1345,24 @@ clean-up process to act as a rate limiter.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Allows retrieving Country Rules by domain and country code</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Shield.HostnameRule.html" translate="no">Plausible.Shield.HostnameRule</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for Hostnames allow list</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Shield.HostnameRuleCache.html" translate="no">Plausible.Shield.HostnameRuleCache</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows retrieving Hostname Rules by domain</p></div>
 
 </div>
 <div class="summary-row">
@@ -1862,11 +1881,12 @@ before redeploying their scripts and integrations.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Plausible.Workers.ExportCSV.html" translate="no">Plausible.Workers.ExportCSV</a>
+    <a href="Plausible.Workers.ExportAnalytics.html" translate="no">Plausible.Workers.ExportAnalytics</a>
 
   </div>
 
-    <div class="summary-synopsis"><p>Worker for running CSV export jobs.</p></div>
+    <div class="summary-synopsis"><p>Worker for running CSV export jobs. Supports S3 and local storage.
+To avoid blocking the queue, a timeout of 15 minutes is enforced.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1876,6 +1896,15 @@ before redeploying their scripts and integrations.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Worker for running analytics import jobs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Workers.LocalImportAnalyticsCleaner.html" translate="no">Plausible.Workers.LocalImportAnalyticsCleaner</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Worker for cleaning local files left after analytics import jobs.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1890,6 +1919,15 @@ before redeploying their scripts and integrations.</p></div>
     <a href="Plausible.Workers.NotifyAnnualRenewal.html" translate="no">Plausible.Workers.NotifyAnnualRenewal</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Workers.NotifyExportedAnalytics.html" translate="no">Plausible.Workers.NotifyExportedAnalytics</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This worker delivers emails for successful and failed exports</p></div>
 
 </div>
 <div class="summary-row">
@@ -2304,11 +2342,20 @@ to the Plausible frontend.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="PlausibleWeb.Live.CSVExport.html" translate="no">PlausibleWeb.Live.CSVExport</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>LiveView allowing scheduling, watching, downloading, and deleting S3 and local exports.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="PlausibleWeb.Live.CSVImport.html" translate="no">PlausibleWeb.Live.CSVImport</a>
 
   </div>
 
-    <div class="summary-synopsis"><p>LiveView allowing uploading CSVs for imported tables to S3</p></div>
+    <div class="summary-synopsis"><p>LiveView allowing uploading CSVs for imported tables to S3 or local storage</p></div>
 
 </div>
 <div class="summary-row">
@@ -2539,6 +2586,24 @@ and the number of steps they have.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>LiveView allowing Country Rules management</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Live.Shields.HostnameRules.html" translate="no">PlausibleWeb.Live.Shields.HostnameRules</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>LiveView allowing hostname Rules management</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Live.Shields.Hostnames.html" translate="no">PlausibleWeb.Live.Shields.Hostnames</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>LiveView for Hostnames Shield</p></div>
 
 </div>
 <div class="summary-row">
@@ -2983,6 +3048,16 @@ Plugins API Tokens lookup.</p></div>
   containing a readable support hash presented to the users.
   To be used in the user-facing APIs, so that we don't leak internal
   server errors.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Plugs.InjectDebugHeaders.html" translate="no">PlausibleWeb.Plugs.InjectDebugHeaders</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This plug updates the response with debug query headers,
+granted they were tracked via <a href="Plausible.DebugReplayInfo.html"><code class="inline">Plausible.DebugReplayInfo</code></a>.</p></div>
 
 </div>
 <div class="summary-row">

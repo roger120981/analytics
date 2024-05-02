@@ -1,5 +1,4 @@
 404.html
-CompiledRegex.html
 Mix.Tasks.CancelSubscription.html
 Mix.Tasks.CleanClickhouse.html
 Mix.Tasks.CreateFreeSubscription.html
@@ -71,6 +70,7 @@ Plausible.DataMigration.VersionedSessions.html
 Plausible.DataMigration.html
 Plausible.DebugReplayInfo.html
 Plausible.Ecto.EventName.html
+Plausible.Ecto.Types.CompiledRegex.html
 Plausible.Exports.html
 Plausible.Factory.html
 Plausible.Funnel.Const.html
@@ -140,6 +140,8 @@ Plausible.Session.CacheStore.html
 Plausible.Session.Salts.html
 Plausible.Shield.CountryRule.html
 Plausible.Shield.CountryRuleCache.html
+Plausible.Shield.HostnameRule.html
+Plausible.Shield.HostnameRuleCache.html
 Plausible.Shield.IPRule.html
 Plausible.Shield.IPRuleCache.html
 Plausible.Shield.PageRule.html
@@ -201,10 +203,12 @@ Plausible.Workers.CheckUsage.html
 Plausible.Workers.CleanInvitations.html
 Plausible.Workers.ClickhouseCleanSites.html
 Plausible.Workers.ExpireDomainChangeTransitions.html
-Plausible.Workers.ExportCSV.html
+Plausible.Workers.ExportAnalytics.html
 Plausible.Workers.ImportAnalytics.html
+Plausible.Workers.LocalImportAnalyticsCleaner.html
 Plausible.Workers.LockSites.html
 Plausible.Workers.NotifyAnnualRenewal.html
+Plausible.Workers.NotifyExportedAnalytics.html
 Plausible.Workers.RotateSalts.html
 Plausible.Workers.ScheduleEmailReports.html
 Plausible.Workers.SendCheckStatsEmails.html
@@ -259,6 +263,7 @@ PlausibleWeb.InvitationController.html
 PlausibleWeb.LastSeenPlug.html
 PlausibleWeb.LayoutView.JWT.html
 PlausibleWeb.LayoutView.html
+PlausibleWeb.Live.CSVExport.html
 PlausibleWeb.Live.CSVImport.html
 PlausibleWeb.Live.ChoosePlan.html
 PlausibleWeb.Live.Components.ComboBox.StaticSearch.html
@@ -285,6 +290,8 @@ PlausibleWeb.Live.ResetPasswordForm.html
 PlausibleWeb.Live.SentryContext.html
 PlausibleWeb.Live.Shields.Countries.html
 PlausibleWeb.Live.Shields.CountryRules.html
+PlausibleWeb.Live.Shields.HostnameRules.html
+PlausibleWeb.Live.Shields.Hostnames.html
 PlausibleWeb.Live.Shields.IPAddresses.html
 PlausibleWeb.Live.Shields.IPRules.html
 PlausibleWeb.Live.Shields.PageRules.html
@@ -334,6 +341,7 @@ PlausibleWeb.Plugins.API.Views.SharedLink.html
 PlausibleWeb.PluginsAPICase.html
 PlausibleWeb.Plugs.AuthorizePluginsAPI.html
 PlausibleWeb.Plugs.ErrorHandler.html
+PlausibleWeb.Plugs.InjectDebugHeaders.html
 PlausibleWeb.Plugs.MaybeDisableRegistration.html
 PlausibleWeb.Plugs.NoRobots.html
 PlausibleWeb.RefInspector.html
@@ -383,8 +391,8 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-79FF4C4A.js
-dist/sidebar_items-9A4530EB.js
+dist/search_data-EEA3C968.js
+dist/sidebar_items-7B88CF06.js
 index.html
 readme.html
 search.html
