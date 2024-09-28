@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.Google.UA.API — Plausible v0.0.1</title>
+    <title>PlausibleWeb.Flows — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-3260C515.js"></script>
+    <script src="dist/sidebar_items-7672636F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,19 +131,20 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.Google.UA.API</span> 
+  <span translate="no">PlausibleWeb.Flows</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>API for Universal Analytics</p>
+<p>Static compile-time definitions for user progress flows.
+See <a href="PlausibleWeb.Components.FlowProgress.html"><code class="inline">PlausibleWeb.Components.FlowProgress</code></a> for rendering capabilities.</p>
   </section>
 
 
@@ -154,28 +155,6 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
-<div class="summary-types summary">
-  <h2>
-    <a href="#types">Types</a>
-  </h2>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:google_analytics_view/0" translate="no">google_analytics_view()</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:import_auth/0" translate="no">import_auth()</a>
-
-      </div>
-
-    </div>
-
-</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -183,7 +162,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#fetch_and_persist/2" translate="no">fetch_and_persist(report_request, opts \\ [])</a>
+        <a href="#domain_change/0" translate="no">domain_change()</a>
 
       </div>
 
@@ -191,7 +170,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_analytics_end_date/2" translate="no">get_analytics_end_date(access_token, view_id)</a>
+        <a href="#invitation/0" translate="no">invitation()</a>
 
       </div>
 
@@ -199,7 +178,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_analytics_start_date/2" translate="no">get_analytics_start_date(access_token, view_id)</a>
+        <a href="#provisioning/0" translate="no">provisioning()</a>
 
       </div>
 
@@ -207,31 +186,41 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_view/2" translate="no">get_view(access_token, lookup_id)</a>
+        <a href="#register/0" translate="no">register()</a>
 
       </div>
-
-        <div class="summary-synopsis"><p>Returns a single Google Analytics view if the user has access to it.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#import_analytics/4" translate="no">import_analytics(date_range, view_id, auth, persist_fn)</a>
+        <a href="#review/0" translate="no">review()</a>
 
       </div>
-
-        <div class="summary-synopsis"><p>Imports stats from a Google Analytics UA view to a Plausible site.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#list_views/1" translate="no">list_views(access_token)</a>
+        <a href="#steps/1" translate="no">steps(flow)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Lists Google Analytics views grouped by hostname.</p></div>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#valid_keys/0" translate="no">valid_keys()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#valid_values/0" translate="no">valid_values()</a>
+
+      </div>
 
     </div>
 
@@ -239,76 +228,6 @@ Pages
 
   </section>
 
-
-  <section id="types" class="details-list">
-    <h1 class="section-heading">
-      <a class="hover-link" href="#types">
-        <i class="ri-link-m" aria-hidden="true"></i>
-      </a>
-      <span class="text">Types</span>
-    </h1>
-    <div class="types-list">
-<section class="detail" id="t:google_analytics_view/0">
-
-  <div class="detail-header">
-    <a href="#t:google_analytics_view/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">google_analytics_view()</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L9" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> google_analytics_view() :: {view_name :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), view_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
-
-      </div>
-
-
-  </section>
-</section>
-<section class="detail" id="t:import_auth/0">
-
-  <div class="detail-header">
-    <a href="#t:import_auth/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">import_auth()</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L11" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> import_auth() ::
-  {access_token :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), refresh_token :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
-   expires_at :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
-
-      </div>
-
-
-  </section>
-</section>
-
-    </div>
-  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -318,18 +237,16 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="fetch_and_persist/2">
-
-    <span id="fetch_and_persist/1"></span>
+<section class="detail" id="domain_change/0">
 
   <div class="detail-header">
-    <a href="#fetch_and_persist/2" class="detail-link" title="Link to this function">
+    <a href="#domain_change/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">fetch_and_persist(report_request, opts \\ [])</h1>
+    <h1 class="signature" translate="no">domain_change()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L117" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L62" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -341,68 +258,23 @@ Pages
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> fetch_and_persist(<a href="Plausible.Google.UA.ReportRequest.html#t:t/0">Plausible.Google.UA.ReportRequest.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) ::
-  :ok | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> domain_change() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
 
       </div>
 
 
   </section>
 </section>
-<section class="detail" id="get_analytics_end_date/2">
+<section class="detail" id="invitation/0">
 
   <div class="detail-header">
-    <a href="#get_analytics_end_date/2" class="detail-link" title="Link to this function">
+    <a href="#invitation/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_analytics_end_date(access_token, view_id)</h1>
+    <h1 class="signature" translate="no">invitation()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L67" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="get_analytics_start_date/2">
-
-  <div class="detail-header">
-    <a href="#get_analytics_start_date/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_analytics_start_date(access_token, view_id)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L63" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="get_view/2">
-
-  <div class="detail-header">
-    <a href="#get_view/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_view(access_token, lookup_id)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L46" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L62" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -414,24 +286,23 @@ Pages
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> get_view(access_token :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), lookup_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
-  {:ok, <a href="#t:google_analytics_view/0">google_analytics_view</a>()} | {:ok, nil} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> invitation() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
 
       </div>
 
-<p>Returns a single Google Analytics view if the user has access to it.</p>
+
   </section>
 </section>
-<section class="detail" id="import_analytics/4">
+<section class="detail" id="provisioning/0">
 
   <div class="detail-header">
-    <a href="#import_analytics/4" class="detail-link" title="Link to this function">
+    <a href="#provisioning/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">import_analytics(date_range, view_id, auth, persist_fn)</h1>
+    <h1 class="signature" translate="no">provisioning()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L91" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L62" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -443,33 +314,23 @@ Pages
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> import_analytics(
-  <a href="https://hexdocs.pm/elixir/Date.Range.html#t:t/0">Date.Range.t</a>(),
-  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
-  <a href="#t:import_auth/0">import_auth</a>(),
-  (<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()] -&gt; :ok)
-) ::
-  :ok | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> provisioning() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
 
       </div>
 
-<p>Imports stats from a Google Analytics UA view to a Plausible site.</p><p>This function fetches Google Analytics reports in batches of 7500 per
-request. The batches are then passed to persist callback.</p><p>Requests to Google Analytics can fail, and are retried at most
-5 times with an exponential backoff. Returns <code class="inline">:ok</code> when
-importing has finished or <code class="inline">{:error, term()}</code> when a request to GA failed too
-many times.</p><p>Useful links:</p><ul><li><a href="https://plausible.io/docs/google-analytics-import">Feature documentation</a></li><li><a href="https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#ReportRequest">GA API reference</a></li><li><a href="https://ga-dev-tools.web.app/dimensions-metrics-explorer">GA Dimensions reference</a></li></ul>
+
   </section>
 </section>
-<section class="detail" id="list_views/1">
+<section class="detail" id="register/0">
 
   <div class="detail-header">
-    <a href="#list_views/1" class="detail-link" title="Link to this function">
+    <a href="#register/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">list_views(access_token)</h1>
+    <h1 class="signature" translate="no">register()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/api.ex#L26" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L62" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -481,13 +342,119 @@ many times.</p><p>Useful links:</p><ul><li><a href="https://plausible.io/docs/go
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> list_views(access_token :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
-  {:ok, %{required(hostname :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) =&gt; [<a href="#t:google_analytics_view/0">google_analytics_view</a>()]}}
-  | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> register() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
 
       </div>
 
-<p>Lists Google Analytics views grouped by hostname.</p>
+
+  </section>
+</section>
+<section class="detail" id="review/0">
+
+  <div class="detail-header">
+    <a href="#review/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">review()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L62" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> review() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="steps/1">
+
+  <div class="detail-header">
+    <a href="#steps/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">steps(flow)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L44" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> steps(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()) :: [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()]</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="valid_keys/0">
+
+  <div class="detail-header">
+    <a href="#valid_keys/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">valid_keys()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L58" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="valid_values/0">
+
+  <div class="detail-header">
+    <a href="#valid_values/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">valid_values()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/flows.ex#L55" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> valid_values() :: [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()]</pre>
+
+          <pre translate="no"><span class="attribute">@spec</span> valid_values() :: [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()]</pre>
+
+      </div>
+
+
   </section>
 </section>
 

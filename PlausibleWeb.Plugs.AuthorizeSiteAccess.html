@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.Google.UA.HTTP — Plausible v0.0.1</title>
+    <title>PlausibleWeb.Plugs.AuthorizeSiteAccess — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-3260C515.js"></script>
+    <script src="dist/sidebar_items-7672636F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,19 +131,19 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/http.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/plugs/authorize_site_access.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.Google.UA.HTTP</span> 
+  <span translate="no">PlausibleWeb.Plugs.AuthorizeSiteAccess</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>HTTP client implementation for Universal Analytics API.</p>
+<p>Plug restricting access to site and shared link, when present.</p><p>In order to permit access to site regardless of role:</p><pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">AuthorizeSiteAccess</span></code></pre><p>or</p><pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">AuthorizeSiteAccess</span><span class="p">,</span><span class="w"> </span><span class="ss">:all_roles</span></code></pre><p>Permit access for a subset of roles only:</p><pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">AuthorizeSiteAccess</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1973413915-1">[</span><span class="ss">:admin</span><span class="p">,</span><span class="w"> </span><span class="ss">:owner</span><span class="p">,</span><span class="w"> </span><span class="ss">:super_admin</span><span class="p" data-group-id="1973413915-1">]</span></code></pre><p>Permit access using a custom site param:</p><pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">AuthorizeSiteAccess</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0220068047-1">{</span><span class="p" data-group-id="0220068047-2">[</span><span class="ss">:admin</span><span class="p">,</span><span class="w"> </span><span class="ss">:owner</span><span class="p">,</span><span class="w"> </span><span class="ss">:super_admin</span><span class="p" data-group-id="0220068047-2">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;site_id&quot;</span><span class="p" data-group-id="0220068047-1">}</span></code></pre><p>or in case where any role is allowed:</p><pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">AuthorizeSiteAccess</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3471437495-1">{</span><span class="ss">:all_roles</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;site_id&quot;</span><span class="p" data-group-id="3471437495-1">}</span></code></pre>
   </section>
 
 
@@ -161,7 +161,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_analytics_end_date/2" translate="no">get_analytics_end_date(access_token, view_id)</a>
+        <a href="#call/2" translate="no">call(conn, arg)</a>
 
       </div>
 
@@ -169,23 +169,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_analytics_start_date/2" translate="no">get_analytics_start_date(access_token, view_id)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#get_report/1" translate="no">get_report(report_request)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#list_views_for_user/1" translate="no">list_views_for_user(access_token)</a>
+        <a href="#init/1" translate="no">init(allowed_roles)</a>
 
       </div>
 
@@ -204,16 +188,16 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="get_analytics_end_date/2">
+<section class="detail" id="call/2">
 
   <div class="detail-header">
-    <a href="#get_analytics_end_date/2" class="detail-link" title="Link to this function">
+    <a href="#call/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_analytics_end_date(access_token, view_id)</h1>
+    <h1 class="signature" translate="no">call(conn, arg)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/http.ex#L134" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/plugs/authorize_site_access.ex#L76" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -226,67 +210,16 @@ Pages
 
   </section>
 </section>
-<section class="detail" id="get_analytics_start_date/2">
+<section class="detail" id="init/1">
 
   <div class="detail-header">
-    <a href="#get_analytics_start_date/2" class="detail-link" title="Link to this function">
+    <a href="#init/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_analytics_start_date(access_token, view_id)</h1>
+    <h1 class="signature" translate="no">init(allowed_roles)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/http.ex#L130" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="get_report/1">
-
-  <div class="detail-header">
-    <a href="#get_report/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_report(report_request)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/http.ex#L11" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> get_report(<a href="Plausible.Google.UA.ReportRequest.html#t:t/0">Plausible.Google.UA.ReportRequest.t</a>()) ::
-  {:ok, {[<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()], <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil}} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
-
-      </div>
-
-
-  </section>
-</section>
-<section class="detail" id="list_views_for_user/1">
-
-  <div class="detail-header">
-    <a href="#list_views_for_user/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">list_views_for_user(access_token)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/http.ex#L107" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/plugs/authorize_site_access.ex#L43" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

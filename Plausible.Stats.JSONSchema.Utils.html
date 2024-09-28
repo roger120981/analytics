@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>PlausibleWeb.CRMAuthPlug — Plausible v0.0.1</title>
+    <title>Plausible.Stats.JSONSchema.Utils — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-3260C515.js"></script>
+    <script src="dist/sidebar_items-7672636F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,16 +131,20 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/plugs/crm_auth_plug.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/json-schema/utils.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">PlausibleWeb.CRMAuthPlug</span> 
+  <span translate="no">Plausible.Stats.JSONSchema.Utils</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
+
+  <section id="moduledoc">
+<p>Module for traversing and modifying JSON schemas.</p>
+  </section>
 
 
   <section id="summary" class="details-list">
@@ -150,14 +154,14 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
-<div class="summary-functions summary">
+<div class="summary-types summary">
   <h2>
-    <a href="#functions">Functions</a>
+    <a href="#types">Types</a>
   </h2>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#call/2" translate="no">call(conn, opts)</a>
+        <a href="#t:json/0" translate="no">json()</a>
 
       </div>
 
@@ -165,7 +169,21 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#init/1" translate="no">init(options)</a>
+        <a href="#t:transform_fun/0" translate="no">transform_fun()</a>
+
+      </div>
+
+    </div>
+
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#traverse/2" translate="no">traverse(json, fun)</a>
 
       </div>
 
@@ -176,6 +194,74 @@ Pages
   </section>
 
 
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:json/0">
+
+  <div class="detail-header">
+    <a href="#t:json/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">json()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/json-schema/utils.ex#L6" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> json() :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:transform_fun/0">
+
+  <div class="detail-header">
+    <a href="#t:transform_fun/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">transform_fun()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/json-schema/utils.ex#L7" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> transform_fun() :: (<a href="#t:json/0">json</a>() -&gt; <a href="#t:json/0">json</a>() | :remove)</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
   <section id="functions" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
@@ -184,16 +270,16 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="call/2">
+<section class="detail" id="traverse/2">
 
   <div class="detail-header">
-    <a href="#call/2" class="detail-link" title="Link to this function">
+    <a href="#traverse/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">call(conn, opts)</h1>
+    <h1 class="signature" translate="no">traverse(json, fun)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/plugs/crm_auth_plug.ex#L9" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/json-schema/utils.ex#L10" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -203,27 +289,16 @@ Pages
 
   <section class="docstring">
 
+      <div class="specs">
 
-  </section>
-</section>
-<section class="detail" id="init/1">
+          <pre translate="no"><span class="attribute">@spec</span> traverse(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), <a href="#t:transform_fun/0">transform_fun</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | :remove</pre>
 
-  <div class="detail-header">
-    <a href="#init/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">init(options)</h1>
+          <pre translate="no"><span class="attribute">@spec</span> traverse(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), <a href="#t:transform_fun/0">transform_fun</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | :remove</pre>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/plugs/crm_auth_plug.ex#L5" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
+          <pre translate="no"><span class="attribute">@spec</span> traverse(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil, <a href="#t:transform_fun/0">transform_fun</a>()) ::
+  <a href="#t:json/0">json</a>() | :remove</pre>
 
-
-  </div>
-
-  <section class="docstring">
+      </div>
 
 
   </section>

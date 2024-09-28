@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.Google.UA.ReportRequest — Plausible v0.0.1</title>
+    <title>Plausible.DataMigration.LocationsSync — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-3260C515.js"></script>
+    <script src="dist/sidebar_items-7672636F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,19 +131,20 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/report_request.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/locations_sync.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.Google.UA.ReportRequest</span> 
+  <span translate="no">Plausible.DataMigration.LocationsSync</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Report request struct for Universal Analytics API</p>
+<p>ClickHouse locations data migration for storing location names in ClickHouse.</p><p>Only run when <code class="inline">Location.version()</code> changes: either as a migration or in cron.</p><p>The migration:</p><ol><li>Truncates existing <code class="inline">location_data</code> table (if exists)</li><li>Creates new table (if needed)</li><li>Inserts new data from Location module</li><li>(Re-)Creates dictionary to read location data from table</li><li>Creates ALIAS columns in <code class="inline">events_v2</code>, <code class="inline">sessions_v2</code> and <code class="inline">imported_locations</code> table to make reading location names easy</li><li>Updates table comment for <code class="inline">location_data</code> to indicate last version synced.</li></ol><p>Note that the dictionary is large enough to cache the whole dataset in memory, making lookups fast.</p><p>This migration is intended to be idempotent and rerunnable - if run multiple times, it should always set things to the same
+result as if run once.</p><p>SQL files available at: priv/data_migrations/LocationsSync/sql</p>
   </section>
 
 
@@ -154,20 +155,6 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
-<div class="summary-types summary">
-  <h2>
-    <a href="#types">Types</a>
-  </h2>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:t/0" translate="no">t()</a>
-
-      </div>
-
-    </div>
-
-</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -175,7 +162,39 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#full_report/0" translate="no">full_report()</a>
+        <a href="#confirm/3" translate="no">confirm(message, func, default_choice \\ :yes)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#out_of_date?/0" translate="no">out_of_date?()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#run/0" translate="no">run()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#run_sql/3" translate="no">run_sql(name, assigns \\ [], options \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#run_sql_confirm/2" translate="no">run_sql_confirm(name, options \\ [])</a>
 
       </div>
 
@@ -185,55 +204,6 @@ Pages
 
   </section>
 
-
-  <section id="types" class="details-list">
-    <h1 class="section-heading">
-      <a class="hover-link" href="#types">
-        <i class="ri-link-m" aria-hidden="true"></i>
-      </a>
-      <span class="text">Types</span>
-    </h1>
-    <div class="types-list">
-<section class="detail" id="t:t/0">
-
-  <div class="detail-header">
-    <a href="#t:t/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">t()</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/report_request.ex#L17" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> t() :: %Plausible.Google.UA.ReportRequest{
-  access_token: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
-  dataset: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
-  date_range: <a href="https://hexdocs.pm/elixir/Date.Range.html#t:t/0">Date.Range.t</a>(),
-  dimensions: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()],
-  metrics: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()],
-  page_size: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
-  page_token: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
-  view_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
-}</pre>
-
-      </div>
-
-
-  </section>
-</section>
-
-    </div>
-  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -243,16 +213,112 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="full_report/0">
+<section class="detail" id="confirm/3">
+
+    <span id="confirm/2"></span>
 
   <div class="detail-header">
-    <a href="#full_report/0" class="detail-link" title="Link to this function">
+    <a href="#confirm/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">full_report()</h1>
+    <h1 class="signature" translate="no">confirm(message, func, default_choice \\ :yes)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/google/ua/report_request.ex#L28" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/locations_sync.ex#L24" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="out_of_date?/0">
+
+  <div class="detail-header">
+    <a href="#out_of_date?/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">out_of_date?()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/locations_sync.ex#L83" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="run/0">
+
+  <div class="detail-header">
+    <a href="#run/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">run()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/locations_sync.ex#L90" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="run_sql/3">
+
+    <span id="run_sql/1"></span>
+
+    <span id="run_sql/2"></span>
+
+  <div class="detail-header">
+    <a href="#run_sql/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">run_sql(name, assigns \\ [], options \\ [])</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/locations_sync.ex#L24" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="run_sql_confirm/2">
+
+    <span id="run_sql_confirm/1"></span>
+
+  <div class="detail-header">
+    <a href="#run_sql_confirm/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">run_sql_confirm(name, options \\ [])</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/locations_sync.ex#L24" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

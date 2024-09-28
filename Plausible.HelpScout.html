@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.Site.SpikeNotification — Plausible v0.0.1</title>
+    <title>Plausible.HelpScout — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-3260C515.js"></script>
+    <script src="dist/sidebar_items-7672636F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,16 +131,20 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/spike_notification.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.Site.SpikeNotification</span> 
+  <span translate="no">Plausible.HelpScout</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
+
+  <section id="moduledoc">
+<p>HelpScout callback API logic.</p>
+  </section>
 
 
   <section id="summary" class="details-list">
@@ -150,6 +154,20 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:signature_error/0" translate="no">signature_error()</a>
+
+      </div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -157,7 +175,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#add_recipient/2" translate="no">add_recipient(schema, recipient)</a>
+        <a href="#get_details_for_customer/1" translate="no">get_details_for_customer(customer_id)</a>
 
       </div>
 
@@ -165,7 +183,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(schema, attrs)</a>
+        <a href="#get_details_for_emails/2" translate="no">get_details_for_emails(emails, customer_id)</a>
 
       </div>
 
@@ -173,7 +191,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#remove_recipient/2" translate="no">remove_recipient(schema, recipient)</a>
+        <a href="#search_users/2" translate="no">search_users(term, customer_id)</a>
 
       </div>
 
@@ -181,9 +199,20 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#was_sent/1" translate="no">was_sent(schema)</a>
+        <a href="#signature_errors/0" translate="no">signature_errors()</a>
 
       </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#validate_signature/1" translate="no">validate_signature(conn)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Validates signature against secret key configured for the
+HelpScout application.</p></div>
 
     </div>
 
@@ -191,6 +220,46 @@ Pages
 
   </section>
 
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:signature_error/0">
+
+  <div class="detail-header">
+    <a href="#t:signature_error/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">signature_error()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L22" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> signature_error() :: :bad_signature | :missing_signature</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -200,16 +269,101 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="add_recipient/2">
+<section class="detail" id="get_details_for_customer/1">
 
   <div class="detail-header">
-    <a href="#add_recipient/2" class="detail-link" title="Link to this function">
+    <a href="#get_details_for_customer/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">add_recipient(schema, recipient)</h1>
+    <h1 class="signature" translate="no">get_details_for_customer(customer_id)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/spike_notification.ex#L21" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L75" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_details_for_customer(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="get_details_for_emails/2">
+
+  <div class="detail-header">
+    <a href="#get_details_for_emails/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_details_for_emails(emails, customer_id)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L82" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_details_for_emails([<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()], <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="search_users/2">
+
+  <div class="detail-header">
+    <a href="#search_users/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">search_users(term, customer_id)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L107" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> search_users(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()]</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="signature_errors/0">
+
+  <div class="detail-header">
+    <a href="#signature_errors/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">signature_errors()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L24" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -222,16 +376,16 @@ Pages
 
   </section>
 </section>
-<section class="detail" id="changeset/2">
+<section class="detail" id="validate_signature/1">
 
   <div class="detail-header">
-    <a href="#changeset/2" class="detail-link" title="Link to this function">
+    <a href="#validate_signature/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(schema, attrs)</h1>
+    <h1 class="signature" translate="no">validate_signature(conn)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/spike_notification.ex#L14" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/extra/lib/plausible/help_scout.ex#L40" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -241,51 +395,21 @@ Pages
 
   <section class="docstring">
 
+      <div class="specs">
 
-  </section>
-</section>
-<section class="detail" id="remove_recipient/2">
+          <pre translate="no"><span class="attribute">@spec</span> validate_signature(<a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()) :: :ok | {:error, <a href="#t:signature_error/0">signature_error</a>()}</pre>
 
-  <div class="detail-header">
-    <a href="#remove_recipient/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">remove_recipient(schema, recipient)</h1>
+      </div>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/spike_notification.ex#L26" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="was_sent/1">
-
-  <div class="detail-header">
-    <a href="#was_sent/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">was_sent(schema)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/spike_notification.ex#L31" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
+<p>Validates signature against secret key configured for the
+HelpScout application.</p><p>NOTE: HelpScout signature generation procedure at
+<a href="https://developer.helpscout.com/apps/guides/signature-validation/">https://developer.helpscout.com/apps/guides/signature-validation/</a>
+fails to mention that it's implicitly dependent on request params
+order getting preserved. PHP arrays are ordered maps, so they provide
+this guarantee. Here, on the other hand, we have to determine the original
+order of the keys directly from the query string and serialize
+params to JSON using wrapper struct, informing Jason to put the values
+in the serialized object in this particular order matching query string.</p>
   </section>
 </section>
 
