@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>PlausibleWeb.RefInspector — Plausible v0.0.1</title>
+    <title>Plausible.Teams.Users — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-7672636F.js"></script>
+    <script src="dist/sidebar_items-8324CD4B.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,16 +131,20 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/refinspector.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/users.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">PlausibleWeb.RefInspector</span> 
+  <span translate="no">Plausible.Teams.Users</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
+
+  <section id="moduledoc">
+<p>Users API accounting for teams.</p>
+  </section>
 
 
   <section id="summary" class="details-list">
@@ -157,7 +161,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#format_referrer/1" translate="no">format_referrer(uri)</a>
+        <a href="#has_sites?/2" translate="no">has_sites?(user, opts \\ [])</a>
 
       </div>
 
@@ -165,15 +169,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#parse/1" translate="no">parse(ref)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#right_uri?/1" translate="no">right_uri?(arg1)</a>
+        <a href="#owns_sites?/2" translate="no">owns_sites?(user, opts \\ [])</a>
 
       </div>
 
@@ -192,16 +188,18 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="format_referrer/1">
+<section class="detail" id="has_sites?/2">
+
+    <span id="has_sites?/1"></span>
 
   <div class="detail-header">
-    <a href="#format_referrer/1" class="detail-link" title="Link to this function">
+    <a href="#has_sites?/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">format_referrer(uri)</h1>
+    <h1 class="signature" translate="no">has_sites?(user, opts \\ [])</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/refinspector.ex#L18" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/users.ex#L11" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -214,38 +212,18 @@ Pages
 
   </section>
 </section>
-<section class="detail" id="parse/1">
+<section class="detail" id="owns_sites?/2">
+
+    <span id="owns_sites?/1"></span>
 
   <div class="detail-header">
-    <a href="#parse/1" class="detail-link" title="Link to this function">
+    <a href="#owns_sites?/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">parse(ref)</h1>
+    <h1 class="signature" translate="no">owns_sites?(user, opts \\ [])</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/refinspector.ex#L2" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="right_uri?/1">
-
-  <div class="detail-header">
-    <a href="#right_uri?/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">right_uri?(arg1)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/refinspector.ex#L23" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/users.ex#L65" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

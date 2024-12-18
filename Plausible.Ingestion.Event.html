@@ -14,7 +14,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-7672636F.js"></script>
+    <script src="dist/sidebar_items-8324CD4B.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -276,7 +276,9 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
   | :site_country_blocklist
   | :site_page_blocklist
   | :site_hostname_allowlist
-  | :verification_agent</pre>
+  | :verification_agent
+  | :lock_timeout
+  | :no_session_for_pageleave</pre>
 
       </div>
 
@@ -292,7 +294,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L38" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L40" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -325,10 +327,11 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
   clickhouse_event:
     %Plausible.ClickhouseEventV2{
       __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      acquisition_channel: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       browser: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       browser_version: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      channel: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       city_geoname_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      click_id_param: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       country_code: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       hostname: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       &quot;meta.key&quot;: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
@@ -344,6 +347,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
       revenue_source_amount: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       revenue_source_currency: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       screen_size: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      scroll_depth: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       session_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       site_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       subdivision1_code: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
@@ -379,6 +383,8 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
       funnels_enabled: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       goals: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       google_auth: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      guest_invitations: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      guest_memberships: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       import_data_loaded: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       imported_data: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
@@ -389,7 +395,6 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
       invitations: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       latest_import_end_date: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       locked: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      members: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       memberships: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       monthly_report: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       native_stats_start_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
@@ -400,6 +405,8 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
       public: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       revenue_goals: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       stats_start_date: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      team: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+      team_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       timezone: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       updated_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
       weekly_report: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
@@ -435,7 +442,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">build_and_buffer(request, context \\ [])</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L52" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L54" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -464,7 +471,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">emit_telemetry_buffered(event)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L92" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L94" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -492,7 +499,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">emit_telemetry_dropped(event, reason)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L100" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L102" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -520,7 +527,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">telemetry_event_buffered()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L78" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L80" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -548,7 +555,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">telemetry_event_dropped()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L83" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L85" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -576,7 +583,7 @@ are uniformly either buffered in batches (to Clickhouse) or dropped
     </a>
     <h1 class="signature" translate="no">telemetry_pipeline_step_duration()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L87" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/ingestion/event.ex#L89" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

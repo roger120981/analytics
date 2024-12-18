@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.DebugReplayInfo — Plausible v0.0.1</title>
+    <title>Plausible.Teams.SiteTransfer — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-7672636F.js"></script>
+    <script src="dist/sidebar_items-8324CD4B.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,19 +131,19 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/debug_replay_info.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/site_transfer.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.DebugReplayInfo</span> 
+  <span translate="no">Plausible.Teams.SiteTransfer</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Function execution context (with arguments) to Sentry reports.</p>
+<p>Site transfer schema</p>
   </section>
 
 
@@ -154,6 +154,20 @@ Pages
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" translate="no">t()</a>
+
+      </div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -161,15 +175,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#deserialize/1" translate="no">deserialize(replay_info)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#include_sentry_replay_info/0" translate="no">include_sentry_replay_info()</a>
+        <a href="#changeset/2" translate="no">changeset(site, opts)</a>
 
       </div>
 
@@ -180,24 +186,24 @@ Pages
   </section>
 
 
-  <section id="functions" class="details-list">
+  <section id="types" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
+      <a class="hover-link" href="#types">
         <i class="ri-link-m" aria-hidden="true"></i>
       </a>
-      <span class="text">Functions</span>
+      <span class="text">Types</span>
     </h1>
-    <div class="functions-list">
-<section class="detail" id="deserialize/1">
+    <div class="types-list">
+<section class="detail" id="t:t/0">
 
   <div class="detail-header">
-    <a href="#deserialize/1" class="detail-link" title="Link to this function">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
+      <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature" translate="no">deserialize(replay_info)</h1>
+    <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/debug_replay_info.ex#L46" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/site_transfer.ex#L10" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -209,29 +215,53 @@ Pages
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> deserialize(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no"><span class="attribute">@type</span> t() :: %Plausible.Teams.SiteTransfer{
+  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  destination_team: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  destination_team_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  email: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  initiator: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  initiator_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  inserted_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  site: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  site_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  transfer_guests: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  transfer_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  updated_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
 
       </div>
 
 
   </section>
 </section>
-<section class="detail" id="include_sentry_replay_info/0">
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="changeset/2">
 
   <div class="detail-header">
-    <a href="#include_sentry_replay_info/0" class="detail-link" title="Link to this macro">
+    <a href="#changeset/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this macro</span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">include_sentry_replay_info()</h1>
+    <h1 class="signature" translate="no">changeset(site, opts)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/debug_replay_info.ex#L15" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/site_transfer.ex#L24" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
 
-
-      <span class="note">(macro)</span>
 
   </div>
 

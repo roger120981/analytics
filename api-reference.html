@@ -14,7 +14,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-7672636F.js"></script>
+    <script src="dist/sidebar_items-8324CD4B.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -228,13 +228,6 @@ period.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Plausible.Auth.Invitation.html" translate="no">Plausible.Auth.Invitation</a>
-
-  </div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="Plausible.Auth.Password.html" translate="no">Plausible.Auth.Password</a>
 
   </div>
@@ -304,6 +297,15 @@ period.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Schema for storing user session data.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Auth.UserSessions.html" translate="no">Plausible.Auth.UserSessions</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Functions for interacting with user sessions.</p></div>
 
 </div>
 <div class="summary-row">
@@ -678,6 +680,15 @@ run via remote shell or otherwise (TBD).</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.DataMigration.AcquisitionChannel.html" translate="no">Plausible.DataMigration.AcquisitionChannel</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates dictionaries and functions to calculate acquisition channel in ClickHouse</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.DataMigration.CleanUpDemoSiteReferrerSource.html" translate="no">Plausible.DataMigration.CleanUpDemoSiteReferrerSource</a>
 
   </div>
@@ -685,6 +696,16 @@ run via remote shell or otherwise (TBD).</p></div>
     <div class="summary-synopsis"><p>Clean up referrer_source entries for demo site with
 <code class="inline">Direct / None</code> for value populated by dogfooding
 Plausible stats.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.DataMigration.ClickhouseRepo.html" translate="no">Plausible.DataMigration.ClickhouseRepo</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Ecto.Repo for Clickhouse data migrations, to be started manually,
+outside of the main application supervision tree.</p></div>
 
 </div>
 <div class="summary-row">
@@ -717,11 +738,11 @@ priv/data_migrations/NumericIDs/sql</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Plausible.DataMigration.Repo.html" translate="no">Plausible.DataMigration.Repo</a>
+    <a href="Plausible.DataMigration.PostgresRepo.html" translate="no">Plausible.DataMigration.PostgresRepo</a>
 
   </div>
 
-    <div class="summary-synopsis"><p>Ecto.Repo for Clickhouse data migrations, to be started manually,
+    <div class="summary-synopsis"><p>Ecto.Repo for Posrtgres data migrations, to be started manually,
 outside of the main application supervision tree.</p></div>
 
 </div>
@@ -743,15 +764,6 @@ when altering it.</p></div>
 
     <div class="summary-synopsis"><p>!!!WARNING!!!: This script is used in migrations. Please take special care
 when altering it.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="Plausible.DebugReplayInfo.html" translate="no">Plausible.DebugReplayInfo</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>Function execution context (with arguments) to Sentry reports.</p></div>
 
 </div>
 <div class="summary-row">
@@ -787,6 +799,15 @@ when altering it.</p></div>
     <a href="Plausible.Factory.html" translate="no">Plausible.Factory</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.File.html" translate="no">Plausible.File</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>File helpers for Plausible.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1067,6 +1088,15 @@ or from local storage for which it uses <a href="https://clickhouse.com/docs/en/
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Ingestion.Acquisition.html" translate="no">Plausible.Ingestion.Acquisition</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module is responsible for figuring out acquisition channel from event referrer_source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Ingestion.Counters.html" translate="no">Plausible.Ingestion.Counters</a>
 
   </div>
@@ -1147,6 +1177,15 @@ to detect user errors early.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Revenue specific functions for the ingestion scope</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Ingestion.Source.html" translate="no">Plausible.Ingestion.Source</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resolves the <code class="inline">source</code> dimension from a combination of <code class="inline">referer</code> header and either <code class="inline">utm_source</code>, <code class="inline">source</code>, or <code class="inline">ref</code> query parameter.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1360,6 +1399,15 @@ clean-up process to act as a rate limiter.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Segment.html" translate="no">Plausible.Segment</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for segments. Segments are saved filter combinations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Sentry.Client.html" translate="no">Plausible.Sentry.Client</a>
 
   </div>
@@ -1533,13 +1581,6 @@ with one of the following policy markers</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Embedded schema for installation meta-data</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="Plausible.Site.Membership.html" translate="no">Plausible.Site.Membership</a>
-
-  </div>
 
 </div>
 <div class="summary-row">
@@ -1760,16 +1801,6 @@ of stats needed for email reports. These stats include</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Plausible.Stats.Filters.Utils.html" translate="no">Plausible.Stats.Filters.Utils</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>Contains utility functions shared between <code class="inline">LegacyDashboardFilterParser</code>
-and <code class="inline">StatsAPIFilterParser</code>.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="Plausible.Stats.Funnel.html" translate="no">Plausible.Stats.Funnel</a>
 
   </div>
@@ -1870,6 +1901,16 @@ for dimensions, filters and metrics used in import table queries</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Stats.Legacy.TimeOnPage.html" translate="no">Plausible.Stats.Legacy.TimeOnPage</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Calculation methods for legacy time_on_page metric. Note the metric
+has its own limitations and quirks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Stats.Metrics.html" translate="no">Plausible.Stats.Metrics</a>
 
   </div>
@@ -1901,6 +1942,16 @@ for dimensions, filters and metrics used in import table queries</p></div>
 
     <div class="summary-synopsis"><p>This struct contains the (JSON-encodable) response for a query and
 is responsible for building it from database query results.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Stats.QueryRunner.html" translate="no">Plausible.Stats.QueryRunner</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module is responsible for executing a Plausible.Stats.Query
+and gathering results.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1952,6 +2003,15 @@ for dimensions and metrics used in query SELECT statement.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Stats.SamplingCache.html" translate="no">Plausible.Stats.SamplingCache</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cache storing estimation for events ingested by a team in the past month.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Stats.TableDecider.html" translate="no">Plausible.Stats.TableDecider</a>
 
   </div>
@@ -1985,6 +2045,87 @@ and metrics, with the purpose of reducing the number of queries and JOINs needed
   </div>
 
     <div class="summary-synopsis"><p>Utilities for modifying stat results</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.html" translate="no">Plausible.Teams</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Core context of teams.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.GuestInvitation.html" translate="no">Plausible.Teams.GuestInvitation</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Guest invitation schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.GuestMembership.html" translate="no">Plausible.Teams.GuestMembership</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Guest membership schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Invitation.html" translate="no">Plausible.Teams.Invitation</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Team invitation schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Membership.html" translate="no">Plausible.Teams.Membership</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Team membership schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.SiteTransfer.html" translate="no">Plausible.Teams.SiteTransfer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Site transfer schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Team.html" translate="no">Plausible.Teams.Team</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Team schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Test.html" translate="no">Plausible.Teams.Test</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Convenience assertions for teams schema transition</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Users.html" translate="no">Plausible.Teams.Users</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Users API accounting for teams.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2658,13 +2799,6 @@ to the Plausible frontend.</p></div>
 
     <div class="summary-synopsis"><p>Static compile-time definitions for user progress flows.
 See <a href="PlausibleWeb.Components.FlowProgress.html"><code class="inline">PlausibleWeb.Components.FlowProgress</code></a> for rendering capabilities.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="PlausibleWeb.FormHelpers.html" translate="no">PlausibleWeb.FormHelpers</a>
-
-  </div>
 
 </div>
 <div class="summary-row">
@@ -3558,13 +3692,6 @@ Plugins API Tokens lookup.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="PlausibleWeb.RefInspector.html" translate="no">PlausibleWeb.RefInspector</a>
-
-  </div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="PlausibleWeb.RemoteIP.html" translate="no">PlausibleWeb.RemoteIP</a>
 
   </div>
@@ -3589,6 +3716,20 @@ Plugins API Tokens lookup.</p></div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="PlausibleWeb.Router.html" translate="no">PlausibleWeb.Router</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.SettingsController.html" translate="no">PlausibleWeb.SettingsController</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.SettingsView.html" translate="no">PlausibleWeb.SettingsView</a>
 
   </div>
 
