@@ -4,22 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.31.1">
+    <meta name="generator" content="ExDoc v0.35.1">
     <meta name="project" content="Plausible v0.0.1">
 
 
     <title>API Reference — Plausible v0.0.1</title>
-    <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
+    <link rel="stylesheet" href="dist/html-elixir-P45HOAC7.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-8324CD4B.js"></script>
-
-      <script src="docs_config.js"></script>
-
-    <script async src="dist/html-L4O5OK2K.js"></script>
-
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-D8EC005A.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-PVRIOB7F.js"></script>
 
   </head>
   <body data-type="extras" class="page-extra">
@@ -37,13 +34,11 @@
       } catch (error) { }
     </script>
 
-<div class="main">
+<div class="body-wrapper">
 
 <button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
   <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
-
-<div class="background-layer"></div>
 
 <nav id="sidebar" class="sidebar">
 
@@ -103,42 +98,42 @@ Pages
 
 <main class="content">
   <output role="status" id="toast"></output>
-  <div class="content-outer">
-    <div id="content" class="content-inner">
-      <div class="top-search">
-        <div class="search-settings">
-          <form class="search-bar" action="search.html">
-            <label class="search-label">
-              <span class="sr-only">Search documentation of Plausible</span>
-              <input name="q" type="text" class="search-input" placeholder="Search Documentation (press /)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-            </label>
-            <button type="submit" class="search-button" aria-label="Submit Search">
-              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
-            </button>
-            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-              <i class="ri-close-line ri-lg" title="Cancel search"></i>
-            </button>
-          </form>
-          <div class="autocomplete">
-          </div>
-          <button class="icon-settings display-settings">
-            <i class="ri-settings-3-line"></i>
-            <span class="sr-only">Settings</span>
+
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Plausible</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
           </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
         </div>
-
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
       </div>
+    </div>
 
-<h1>
+<div id="top-content">
+  <h1>
 
-    <a href="https://github.com/plausible/analytics" title="View Source" class="icon-action" rel="help">
-      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-      <span class="sr-only">View Source</span>
-    </a>
+      <a href="https://github.com/plausible/analytics" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
 
 
-  <span>API Reference <small class="app-vsn">Plausible v0.0.1</small></span>
-</h1>
+    <span>API Reference <small class="app-vsn">Plausible v0.0.1</small></span>
+  </h1>
 
 
   <section class="details-list">
@@ -164,6 +159,16 @@ Pages
   </div>
 
     <div class="summary-synopsis"><p>Build-related macros</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.AssertMatches.html" translate="no">Plausible.AssertMatches</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Pattern match assertions wrapper macro extending it with checks expressed
+directly within the pattern.</p></div>
 
 </div>
 <div class="summary-row">
@@ -197,6 +202,8 @@ Pages
 
   </div>
 
+    <div class="summary-synopsis"><p>Stats and Sites API key logic for CRM.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -214,16 +221,6 @@ Pages
   </div>
 
     <div class="summary-synopsis"><p>API for verifying emails.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="Plausible.Auth.GracePeriod.html" translate="no">Plausible.Auth.GracePeriod</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>This embedded schema stores information about the account locking grace
-period.</p></div>
 
 </div>
 <div class="summary-row">
@@ -332,7 +329,7 @@ as <code class="inline">Plausible.Billing.Feature.Props</code>.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Ecto type representing a list of features. This is a proxy for 
+    <div class="summary-synopsis"><p>Ecto type representing a list of features. This is a proxy for
 <code class="inline">{:array, Plausible.Billing.Ecto.Feature}</code> and is required for Kaffy to
 render the HTML input correctly.</p></div>
 
@@ -495,6 +492,15 @@ the CLDR data that supports formatting and localisation.</p></div>
     <div class="summary-synopsis"><p>Backend module that provides functions
 to define new locales and display human-readable
 locale names for presentation purposes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Cldr.Money.html" translate="no">Plausible.Cldr.Money</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A backend module for Money.</p></div>
 
 </div>
 <div class="summary-row">
@@ -689,6 +695,16 @@ run via remote shell or otherwise (TBD).</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.DataMigration.BackfillTeamsHourlyRequestLimit.html" translate="no">Plausible.DataMigration.BackfillTeamsHourlyRequestLimit</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>!!!WARNING!!!: This script is used in migrations. Please take special care
+when altering it.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.DataMigration.CleanUpDemoSiteReferrerSource.html" translate="no">Plausible.DataMigration.CleanUpDemoSiteReferrerSource</a>
 
   </div>
@@ -754,6 +770,15 @@ outside of the main application supervision tree.</p></div>
 
     <div class="summary-synopsis"><p>!!!WARNING!!!: This script is used in migrations. Please take special care
 when altering it.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.DataMigration.SiteImports.SiteImportSnapshot.html" translate="no">Plausible.DataMigration.SiteImports.SiteImportSnapshot</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A snapshot of the Plausible.Imported.SiteImport schema from April 2024.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1202,15 +1227,6 @@ to detect user errors early.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Plausible.LiveViewTest.html" translate="no">Plausible.LiveViewTest</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>Temporary fix for <a href="https://hexdocs.pm/phoenix_live_view/0.20.3/Phoenix.LiveViewTest.html#render_component/2"><code class="inline">Phoenix.LiveViewTest.render_component/2</code></a> failing CI with warnings.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="Plausible.Mailer.html" translate="no">Plausible.Mailer</a>
 
   </div>
@@ -1323,9 +1339,28 @@ Exposes high-level operation for token-based authentication flows.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Plugs.AuthorizeTeamAccess.html" translate="no">Plausible.Plugs.AuthorizeTeamAccess</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enforce team role to be within the declared set.
+<code class="inline">:current_team_role</code> is assumed to be populated by <a href="PlausibleWeb.AuthPlug.html"><code class="inline">PlausibleWeb.AuthPlug</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.PromEx.html" translate="no">Plausible.PromEx</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.PromEx.Buckets.html" translate="no">Plausible.PromEx.Buckets</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adapts <a href="https://hexdocs.pm/peep/3.4.2/Peep.html"><code class="inline">Peep</code></a> for <a href="https://hexdocs.pm/prom_ex/1.11.0/PromEx.html"><code class="inline">PromEx</code></a>.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1335,6 +1370,15 @@ Exposes high-level operation for token-based authentication flows.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Custom PromEx plugin for instrumenting code within Plausible app.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.PromEx.StripedPeep.html" translate="no">Plausible.PromEx.StripedPeep</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>&quot;Striped&quot; storage based on <a href="https://hexdocs.pm/prom_ex/1.11.0/PromEx.Storage.Peep.html"><code class="inline">PromEx.Storage.Peep</code></a>.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1361,7 +1405,7 @@ Exposes high-level operation for token-based authentication flows.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Thin wrapper around <a href="https://www.erlang.org/doc/man/ets.html#update_counter-4"><code class="inline">:ets.update_counter/4</code></a> and a
+    <div class="summary-synopsis"><p>Thin wrapper around <a href="https://www.erlang.org/doc/apps/stdlib/ets.html#update_counter/4"><code class="inline">:ets.update_counter/4</code></a> and a
 clean-up process to act as a rate limiter.</p></div>
 
 </div>
@@ -1399,7 +1443,25 @@ clean-up process to act as a rate limiter.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Plausible.Segment.html" translate="no">Plausible.Segment</a>
+    <a href="Plausible.Segments.html" translate="no">Plausible.Segments</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Module for accessing Segments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Segments.Filters.html" translate="no">Plausible.Segments.Filters</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module contains functions that enable resolving segments in filters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Segments.Segment.html" translate="no">Plausible.Segments.Segment</a>
 
   </div>
 
@@ -1420,6 +1482,24 @@ clean-up process to act as a rate limiter.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Sentry callbacks for filtering and grouping events</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Session.Balancer.html" translate="no">Plausible.Session.Balancer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Serialize session processing to avoid explicit locks</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Session.BalancerSupervisor.html" translate="no">Plausible.Session.BalancerSupervisor</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Serialize session processing to avoid explicit locks</p></div>
 
 </div>
 <div class="summary-row">
@@ -1820,6 +1900,15 @@ ClickHouse funnel query based on <a href="Plausible.Funnel.html"><code class="in
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Stats.Goals.html" translate="no">Plausible.Stats.Goals</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stats code related to filtering and grouping by goals.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Stats.Imported.html" translate="no">Plausible.Stats.Imported</a>
 
   </div>
@@ -1905,8 +1994,8 @@ for dimensions, filters and metrics used in import table queries</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Calculation methods for legacy time_on_page metric. Note the metric
-has its own limitations and quirks.</p></div>
+    <div class="summary-synopsis"><p>Calculation methods for <code class="inline">legacy</code> time_on_page metric. <code class="inline">Legacy</code> calculation methods
+are used when site does not have engagement data for the requested dates.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2031,6 +2120,15 @@ and metrics, with the purpose of reducing the number of queries and JOINs needed
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Stats.TimeOnPage.html" translate="no">Plausible.Stats.TimeOnPage</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Module to check whether the new time on page metric is available.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Stats.Timeseries.html" translate="no">Plausible.Stats.Timeseries</a>
 
   </div>
@@ -2054,6 +2152,16 @@ and metrics, with the purpose of reducing the number of queries and JOINs needed
   </div>
 
     <div class="summary-synopsis"><p>Core context of teams.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.GracePeriod.html" translate="no">Plausible.Teams.GracePeriod</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This embedded schema stores information about the account locking grace
+period.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2085,11 +2193,70 @@ and metrics, with the purpose of reducing the number of queries and JOINs needed
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Teams.Invitations.InviteToTeam.html" translate="no">Plausible.Teams.Invitations.InviteToTeam</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Service for inviting new or existing users to team.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Invitations.Remove.html" translate="no">Plausible.Teams.Invitations.Remove</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Service for removing a team invitation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Management.Layout.html" translate="no">Plausible.Teams.Management.Layout</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Abstraction for team membership(s) layout - provides a high level CRUD for
+setting up team memberships, including invitations. Persisting the layout,
+effectively takes care of delegating the operations to specialized services
+and sending out e-mail notifications on success, if need be.
+To be used in UIs allowing team memberships adjustments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Management.Layout.Entry.html" translate="no">Plausible.Teams.Management.Layout.Entry</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Module representing a single Team Layout element and all its state
+transitions, including persistence options.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Teams.Membership.html" translate="no">Plausible.Teams.Membership</a>
 
   </div>
 
     <div class="summary-synopsis"><p>Team membership schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Memberships.Remove.html" translate="no">Plausible.Teams.Memberships.Remove</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Service for removing a team member.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.Memberships.UpdateRole.html" translate="no">Plausible.Teams.Memberships.UpdateRole</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Service for updating role of a team member.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2108,6 +2275,15 @@ and metrics, with the purpose of reducing the number of queries and JOINs needed
   </div>
 
     <div class="summary-synopsis"><p>Team schema</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Teams.TeamAdmin.html" translate="no">Plausible.Teams.TeamAdmin</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Kaffy CRM definition for Team.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2472,6 +2648,16 @@ To avoid blocking the queue, a timeout of 15 minutes is enforced.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Workers.SetLegacyTimeOnPageCutoff.html" translate="no">Plausible.Workers.SetLegacyTimeOnPageCutoff</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets sites <code class="inline">legacy_time_on_page_cutoff</code> depending on whether they have
+sent us engagement data in the past.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Workers.TrafficChangeNotifier.html" translate="no">Plausible.Workers.TrafficChangeNotifier</a>
 
   </div>
@@ -2523,6 +2709,15 @@ To avoid blocking the queue, a timeout of 15 minutes is enforced.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="PlausibleWeb.Api.Internal.SegmentsController.html" translate="no">PlausibleWeb.Api.Internal.SegmentsController</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Internal API controller for segments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="PlausibleWeb.Api.InternalController.html" translate="no">PlausibleWeb.Api.InternalController</a>
 
   </div>
@@ -2538,6 +2733,13 @@ To avoid blocking the queue, a timeout of 15 minutes is enforced.</p></div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="PlausibleWeb.Api.StatsController.html" translate="no">PlausibleWeb.Api.StatsController</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Api.SystemController.html" translate="no">PlausibleWeb.Api.SystemController</a>
 
   </div>
 
@@ -2646,15 +2848,6 @@ flow definitions.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="PlausibleWeb.Components.Settings.html" translate="no">PlausibleWeb.Components.Settings</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>An umbrella module for the Integrations settings section</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="PlausibleWeb.Components.Site.Feature.html" translate="no">PlausibleWeb.Components.Site.Feature</a>
 
   </div>
@@ -2738,13 +2931,6 @@ tests that require setting up a connection.</p></div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="PlausibleWeb.Endpoint.html" translate="no">PlausibleWeb.Endpoint</a>
-
-  </div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="PlausibleWeb.ErrorHelpers.html" translate="no">PlausibleWeb.ErrorHelpers</a>
 
   </div>
 
@@ -2931,6 +3117,16 @@ functionality.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Pagination components for LiveViews.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Live.Components.Team.html" translate="no">PlausibleWeb.Live.Components.Team</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shared component base for listing team members/invitations
+alongside with the role dropdown.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3188,6 +3384,24 @@ and the number of steps they have.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>LiveView for sites index.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Live.TeamManagement.html" translate="no">PlausibleWeb.Live.TeamManagement</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Live view for enqueuing and applying team membership adjustments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Live.TeamSetup.html" translate="no">PlausibleWeb.Live.TeamSetup</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>LiveView for Team setup</p></div>
 
 </div>
 <div class="summary-row">
@@ -3782,6 +3996,15 @@ Plugins API Tokens lookup.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="PlausibleWeb.Team.Notice.html" translate="no">PlausibleWeb.Team.Notice</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Components with teams related notices.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="PlausibleWeb.TestController.html" translate="no">PlausibleWeb.TestController</a>
 
   </div>
@@ -3825,6 +4048,13 @@ Authentication.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Functions for user session management.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Storybook.Root.html" translate="no">Storybook.Root</a>
+
+  </div>
 
 </div>
 
@@ -3905,7 +4135,9 @@ way to generate a pageview or custom event, either in your development environme
     </div>
   </section>
 
-<div class="bottom-actions">
+</div>
+
+<div class="bottom-actions" id="bottom-actions">
   <div class="bottom-actions-item">
 
   </div>
@@ -3922,34 +4154,33 @@ Introduction
 
   </div>
 </div>
-      <footer class="footer">
-        <p>
+    <footer class="footer">
+      <p>
 
-          <span class="line">
-            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-              Search HexDocs
-            </button>
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
 
-              <a href="Plausible.epub" title="ePub version">
-                Download ePub version
-              </a>
+            <a href="Plausible.epub" title="ePub version">
+              Download ePub version
+            </a>
 
-          </span>
-        </p>
+        </span>
+      </p>
 
-        <p class="built-using">
-          Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.1) for the
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.35.1) for the
 
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-        </p>
-      </footer>
-    </div>
+      </p>
+
+    </footer>
   </div>
 </main>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad: true})</script>
 
